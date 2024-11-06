@@ -469,8 +469,12 @@ nav > div {
 }
 
 
-.faq .answer.show {
+.faq.active .answer {
     display: block; /* Show answer when toggled */
+}
+
+.faq.active .fa-chevron-down {
+    transform: rotate(180deg);
 }
 
 .faq .answer p {

@@ -29,14 +29,16 @@ const swiper = new Swiper('.slide-wrapper', {
     }
   });
 
-// const faqs = document.querySelectorAll(".faq");
+  const faqItems = document.querySelectorAll('.faq');
 
-
-// faqs.forEach((faq) => {
-//   faq.addEventListener("click", () => {
-//     faq.classList.toggle("active");
-//   });
-// });
+  // Loop through each FAQ item
+  faqItems.forEach(faq => {
+      // Add a click event listener to each question div
+      faq.querySelector('.question').addEventListener('click', () => {
+          // Toggle the 'active' class on the clicked faq
+          faq.classList.toggle('active');
+      });
+  });
 
 const menuIcon = document.getElementById('menu-icon');
 const navMenu = document.getElementById('nav-menu');
