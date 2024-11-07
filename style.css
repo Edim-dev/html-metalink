@@ -662,19 +662,65 @@ nav > div {
 
 /* Responsive styling for smaller screens (tablet) */
 @media screen and (max-width: 992px) {
-    #header {
-        padding: 0 24px;
+    nav {
+        flex-direction: row;
+        align-items: center;
     }
 
     nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
     }
 
-    nav ul li {
-        margin: 0 10px;
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #1A2233;
+        padding: 10px;
+    }
+
+    #nav-menu.active {
+        display: flex; /* Show the menu when active */
+        line-height: 15px;
+    }
+
+    .menu-icon {
+        display: block;
+        color: #fff;
+        font-size: 24px;
+        padding: 10px;
+        z-index: 1000;
+    }
+
+    #nav-menu li {
+        margin: 10px 0;
+    }
+
+    #nav-menu a {
+        color: #fff;
         font-size: 16px;
+    }
+
+    .nav-icon img {
+        width: 26px;
+        height: 26px;
+    }
+
+    nav > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .introduction h1 {
@@ -690,85 +736,136 @@ nav > div {
         font-size: 16px;
     }
 
+    /* top-collection */
+
     .swiper-header {
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        margin: 0 35px;
     }
 
     .swiper-header h1 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .swiper-header a {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .swiper {
+        width: 500px;
+    }
+
+    .card-item {
+        gap: 2px;
     }
 
     .card-list .card-item {
-        width: 100%; /* Full width cards on small screens */
-        margin-bottom: 20px;
+        width: 500px;
+        margin-bottom: 40px;
+        padding: 20px;
     }
 
     .card-list .card-item .user-image {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
     }
 
     .card-list .card-item .user-profile {
+        width: 72px;
+        height: 72px;
         top: 190px;
-        left: 30px;
+        left: 35px;
     }
 
     .card-list .card-item i {
         top: 250px;
-        left: 75px;
+        left: 95px;
+    }
+
+    /* discover items  */
+
+    .containerr {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .containerr .box-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+        gap: 15px; /* Adjust gap as needed */
     }
 
     .containerr .box-container .box {
-        width: 100%; /* Full width of container on small screens */
+        width: auto; /* Adjust width for responsiveness */
     }
 
     .containerr .box-container .box .img {
-        height: 180px; /* Adjust image size for small screens */
+        width: 230px;
+        height: 230px;
     }
 
     .overlay {
-        left: 60px; /* Adjust overlay position */
+        left: 80px;
+        opacity: 0;
     }
 
-    .containerr .boxx-container {
-        grid-template-columns: 1fr;
-        padding: 15px;
-    }
-
-    .containerr .boxx-container .boxx {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-    }
-
-    .containerr .boxx-container .boxx .images img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .containerr .boxx-container .boxx .texts h4 {
-        font-size: 18px;
-    }
-
-    .containerr .boxx-container .boxx .texts p {
+    .explore {
         font-size: 14px;
     }
 
-    .containerr .boxx-container .boxx .icon {
-        margin-top: 10px;
-        padding: 8px;
+    /* best creator  */
+
+    .boxx-container {
+        grid-template-columns: repeat(3, 1fr); /* Change to 3 columns */
+        gap: 15px; /* Adjust gap as needed */
+    
     }
 
+    .boxx {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .containerr .boxx-container .boxx {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        width: 100%;
+        position: relative;
+    }
+
+    .containerr .boxx-container .boxx .images img {
+        width: 64px;
+        height: 64px;
+        margin-top: 8px;
+    }
+
+    .containerr .boxx-container .boxx .images i {
+        position: absolute;
+        left: 70px;
+        top: 12px;
+    }
+
+    .containerr .boxx-container .boxx .texts h4 {
+        font-size: 16px;
+    }
+
+    .containerr .boxx-container .boxx .texts p {
+        font-size: 12px;
+    }
+
+    .containerr .boxx-container .boxx .icon {
+        margin-top: 5px;
+        padding: 6px;
+    }
+
+
     .qna {
-        width: 95%;
+        width: 70%;
     }
 
     .qna .title {
@@ -807,36 +904,67 @@ nav > div {
     }
 
     .footer {
-        padding: 20px 20px;
+        display: flex;
+        flex-direction: column;
     }
 
     .footer-left {
-        margin-right: 0;
-        text-align: center;
-    }
-
-    .footer-left img {
-        width: 120px;
-    }
-
-    .footer-right {
+        display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         text-align: center;
     }
 
-    .footer-right > * {
-        margin-bottom: 15px;
+    .footer-left p {
+        text-align: center;
+        padding-left: 100px;
+    }
+
+    .metalink a {
+        font-size: 24px;
+    }
+
+    .footer-left img {
+        width: 100px;
+    }
+
+    .footer h2 {
+        font-size: 15px;
+    }
+
+    .footer-left p,
+    .footer-right p {
+        font-size: 15px;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .down-images {
         flex-direction: column;
-        align-items: center;
     }
 
-    .footer-bottom {
-        padding: 15px 0;
+    .download {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+    .footer-bottom {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+
+    .footer a {
+        font-size: 12px;
+    }
+
+
 }
 
 /* Responsive styling for mobile screens */
