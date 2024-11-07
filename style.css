@@ -662,6 +662,10 @@ nav > div {
 
 /* Responsive styling for smaller screens (tablet) */
 @media screen and (max-width: 992px) {
+    *, body {
+        max-width: 992px;
+    }
+
     nav {
         flex-direction: row;
         align-items: center;
