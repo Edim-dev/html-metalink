@@ -819,17 +819,18 @@ nav > div {
 
     /* best creator  */
 
-    .boxx-container {
-        grid-template-columns: repeat(3, 1fr); /* Change to 3 columns */
-        gap: 15px; /* Adjust gap as needed */
-    
+    .containerr {
+        padding: 20px;
     }
 
-    .boxx {
-        display: flex;
-        flex-direction: row;
+    .containerr h1 {
+        font-size: 18px;
     }
 
+    .containerr .boxx-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
     .containerr .boxx-container .boxx {
         display: flex;
         flex-direction: row;
